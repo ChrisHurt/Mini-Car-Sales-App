@@ -3,7 +3,7 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
-# README Template
+# Mini Car Sales App
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
