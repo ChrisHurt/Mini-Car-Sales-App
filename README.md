@@ -31,7 +31,6 @@ A coding challenge supplied by Carsales.com to produce a C# MVC Full Stack Appli
 * [.Net Core](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -44,9 +43,9 @@ A coding challenge supplied by Carsales.com to produce a C# MVC Full Stack Appli
 -- Pending Finalisation of the project
 
 <!-- ROADMAP -->
-## Roadmap
+## Roadmap 04/10
 
-### Sprint 1
+### Sprint 1 -- Completed 06/10/19
 UI Implementation - Part 1 of 2
 - Build a nav bar featuring 2 links: 'Home' and 'View Vehicles'
 - Build a home page with a drop-down menu to select 'Create Car'
