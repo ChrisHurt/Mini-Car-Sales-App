@@ -1,12 +1,8 @@
 using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using MiniCarSalesApp.Helpers;
 
 namespace MiniCarSalesApp
 {
@@ -81,6 +77,21 @@ namespace MiniCarSalesApp
             Console.WriteLine("Testing Wheels property of car...");
             Debug.Assert(car.Wheels == 4, "Error: could not set Wheels of car");
             Console.WriteLine("Wheels property successfully set to: " + car.Wheels);
+
+            // Testing XML serialisation and deserialisation
+
+            Console.WriteLine("Testing XML Serialization of vehicle...");
+            XMLSerializer.WriteVehicleXML(vehicle);
+            Vehicle readVehicle = XMLSerializer.ReadVehicleXML("undefined");
+            Debug.Assert(readVehicle.Make == "Ford");
+            Console.WriteLine("XML Serialization of vehicle succeeded.");
+
+            Console.WriteLine("Testing XML Serialization of car...");
+            XMLSerializer.WriteVehicleXML(car);
+            Car readCar = (Car)XMLSerializer.ReadVehicleXML("Car");
+            Debug.Assert(readCar.Doors == 4);
+            Console.WriteLine("XML Serialization of car succeeded.");
+
 
         }
     }
