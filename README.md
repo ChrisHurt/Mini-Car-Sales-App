@@ -51,7 +51,7 @@ UI Implementation - Part 1 of 2
 - Build a home page with a drop-down menu to select 'Create Car'
 - Build a create car page with a form listing all relevant properties(vehicle type, make, model, engine, doors, wheels and body type) except for id - this will be handled separately
 
-### Sprint 2
+### Sprint 2 -- Completed 06/10/19
 Build models to represent Vehicles and Cars
 - Vehicles have:
   - make
