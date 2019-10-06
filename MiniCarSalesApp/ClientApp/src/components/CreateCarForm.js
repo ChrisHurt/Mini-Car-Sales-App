@@ -29,6 +29,7 @@ export class CreateCarForm extends Component {
                             <option>Cab Chassis</option>
                             <option>Convertible</option>
                             <option>Coupe</option>
+                            <option>Hatch</option>
                             <option>Light Truck</option>
                             <option>People Mover</option>
                             <option>Sedan</option>
