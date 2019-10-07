@@ -5,7 +5,10 @@ export class Vehicles extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { currentCount: 0 };
+
+        this.state = {
+            loading: true
+        }
     }
 
     renderCars = () => {
@@ -20,6 +23,10 @@ export class Vehicles extends Component {
         return (<div> A list of bikes will be here when the data is available</div>)
     }
 
+    componentDidMount() {
+        this.populateVehicleData();
+    }
+
 
     render() {
         return (
@@ -29,5 +36,13 @@ export class Vehicles extends Component {
                 {this.renderBoats()}
             </div>
         );
+    }
+    
+    async populateVehicleData() {
+        const response = await fetch('cars');
+        const data = await response.json();
+        this.setState({ cars: data, loading: false });
+
+        // Further requests for 
     }
 }

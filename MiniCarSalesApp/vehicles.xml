@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Vehicles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cars>
+    <Car>
+      <Id>0</Id>
+      <Type>car</Type>
+      <Make>Ford</Make>
+      <Model>Focus Trend</Model>
+      <BodyType>Hatch</BodyType>
+      <Engine>1.5L Turbo</Engine>
+      <Doors>4</Doors>
+      <Wheels>4</Wheels>
+    </Car>
+    <Car>
+      <Id>1</Id>
+      <Type>car</Type>
+      <Make>Ford</Make>
+      <Model>Focus Trend</Model>
+      <BodyType>Hatch</BodyType>
+      <Engine>1.5L Turbo</Engine>
+      <Doors>4</Doors>
+      <Wheels>4</Wheels>
+    </Car>
+    <Car>
+      <Id>2</Id>
+      <Type>car</Type>
+      <Make>Ford</Make>
+      <Model>Focus Trend</Model>
+      <BodyType>Hatch</BodyType>
+      <Engine>1.5L Turbo</Engine>
+      <Doors>4</Doors>
+      <Wheels>4</Wheels>
+    </Car>
+    <Car>
+      <Id>3</Id>
+      <Type>car</Type>
+      <Make>Ford</Make>
+      <Model>Focus Trend</Model>
+      <BodyType>Hatch</BodyType>
+      <Engine>1.5L Turbo</Engine>
+      <Doors>4</Doors>
+      <Wheels>4</Wheels>
+    </Car>
+    <Car>
+      <Id>4</Id>
+      <Type>car</Type>
+      <Make>Ford</Make>
+      <Model>Focus Trend</Model>
+      <BodyType>Hatch</BodyType>
+      <Engine>1.5L Turbo</Engine>
+      <Doors>4</Doors>
+      <Wheels>4</Wheels>
+    </Car>
+    <Car>
+      <Id>5</Id>
+      <Type>car</Type>
+      <Make>Ford</Make>
+      <Model>Focus Trend</Model>
+      <BodyType>Hatch</BodyType>
+      <Engine>1.5L Turbo</Engine>
+      <Doors>4</Doors>
+      <Wheels>4</Wheels>
+    </Car>
+  </Cars>
+</Vehicles>
