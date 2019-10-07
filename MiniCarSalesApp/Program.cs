@@ -79,18 +79,15 @@ namespace MiniCarSalesApp
             Console.WriteLine("Wheels property successfully set to: " + car.Wheels);
 
             // Testing XML serialisation and deserialisation
-
             Console.WriteLine("Testing XML Serialization of vehicle...");
-            XMLSerializer.WriteVehicleXML(vehicle);
-            Vehicle readVehicle = XMLSerializer.ReadVehicleXML("undefined");
-            Debug.Assert(readVehicle.Make == "Ford");
-            Console.WriteLine("XML Serialization of vehicle succeeded.");
-
-            Console.WriteLine("Testing XML Serialization of car...");
             XMLSerializer.WriteVehicleXML(car);
-            Car readCar = (Car)XMLSerializer.ReadVehicleXML("Car");
-            Debug.Assert(readCar.Doors == 4);
-            Console.WriteLine("XML Serialization of car succeeded.");
+            Vehicles vehicles = XMLSerializer.ReadVehiclesXML();
+            Debug.Assert(vehicles.Cars[0].Model == "Focus Trend", "Error: could not read xml file");
+            Console.WriteLine("XML Serialisation and De-serialisation successful");
+
+
+
+
 
 
         }

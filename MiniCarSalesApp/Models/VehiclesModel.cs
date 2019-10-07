@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace MiniCarSalesApp
 {
@@ -14,6 +15,7 @@ namespace MiniCarSalesApp
         public string Make { get; set; }
         public string Model { get; set; }
     }
+
     [Serializable]
     public class Car : Vehicle
     {
@@ -21,5 +23,12 @@ namespace MiniCarSalesApp
         public string Engine { get; set; }
         public int Doors { get; set; }
         public int Wheels { get; set; }
+    }
+
+    [Serializable]
+    public class Vehicles
+    {
+        [XmlArray("Cars")]
+        public Car[] Cars;
     }
 }

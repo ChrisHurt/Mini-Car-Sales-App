@@ -63,9 +63,10 @@ Build models to represent Vehicles and Cars
   - wheels
   - bodyType
 
-### Sprint 3
+### Sprint 3 -- Completed 07/10/19
 Implement a method to read and write Vehicle and Car data to the Hard Drive
 - I am currently considering XML Serialization with reference to [https://docs.microsoft.com/en-us/dotnet/standard/serialization/examples-of-xml-serialization](https://docs.microsoft.com/en-us/dotnet/standard/serialization/examples-of-xml-serialization) and [https://stackoverflow.com/questions/2347642/deserialize-from-string-instead-textreader](https://stackoverflow.com/questions/2347642/deserialize-from-string-instead-textreader)
+- Add Unique ID's to cars as they are serialised
 
 ### Sprint 4
 Build C# API endpoints

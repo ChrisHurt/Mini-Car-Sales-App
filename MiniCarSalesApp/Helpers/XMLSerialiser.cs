@@ -1,53 +1,59 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
+using System.Linq;
 
 namespace MiniCarSalesApp.Helpers
 {
     public static class XMLSerializer
     {
-     public static void WriteVehicleXML(Vehicle toSerialize)
+        public static void WriteVehicleXML(Vehicle toSerialize)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(toSerialize.GetType());
-            using (StringWriter textWriter = new StringWriter())
+            Vehicles vehicles;
+
+            if (File.Exists(Directory.GetCurrentDirectory() + @"/vehicles.xml"))
             {
-                xmlSerializer.Serialize(textWriter, toSerialize);
-                string data = textWriter.ToString();
-                string path = Directory.GetCurrentDirectory();
-                File.WriteAllText(path + @"/" + toSerialize.Type + ".xml", data);
+                vehicles = ReadVehiclesXML();
+                int highestId = 0;
+
+                foreach(Car car in vehicles.Cars)
+                {
+                    if(car.Id > highestId)
+                    {
+                        highestId = car.Id;
+                    }
+                }
+
+                toSerialize.Id = highestId + 1;
+                Array.Resize(ref vehicles.Cars, vehicles.Cars.Length + 1);
+                vehicles.Cars[vehicles.Cars.GetUpperBound(0)] = (Car)toSerialize;
+
+            } else
+            {
+                toSerialize.Id = 0;
+                vehicles = new Vehicles { };
+                Array.Resize(ref vehicles.Cars, 1);
+                vehicles.Cars[0] = (Car)toSerialize;
+            }
+
+            XmlSerializer ser = new XmlSerializer(typeof(Vehicles));
+
+            using (TextWriter writer = new StreamWriter("vehicles.xml"))
+            {
+                ser.Serialize(writer, vehicles);
             }
         }
-        public static Vehicle ReadVehicleXML(string vehicleType)
+        public static Vehicles ReadVehiclesXML()
         {
-            //string path = Directory.GetCurrentDirectory();
-            string data = File.ReadAllText(Directory.GetCurrentDirectory() + @"/" + vehicleType + ".xml");
+            string data = File.ReadAllText(Directory.GetCurrentDirectory() + @"/vehicles.xml");
 
-            XmlSerializer xmlSerializer;
-
-            switch (vehicleType)
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Vehicles));
+            using (TextReader reader = new StringReader(data))
             {
-                case "undefined":
-                    xmlSerializer = new XmlSerializer(typeof(Vehicle));
-                    using (TextReader reader = new StringReader(data))
-                    {
-                        Vehicle result = (Vehicle)xmlSerializer.Deserialize(reader);
-                        return result;
-                    }
-                case "Car":
-                    xmlSerializer = new XmlSerializer(typeof(Car));
-                    using (TextReader reader = new StringReader(data))
-                    {
-                        Car result = (Car)xmlSerializer.Deserialize(reader);
-                        return result;
-                    }
-                case "Bike":
-                    
-                    break;
-                case "Boat":
-
-                    break;
+                Vehicles result = (Vehicles)xmlSerializer.Deserialize(reader);
+                return result;
             }
-            return default(Vehicle);
-        }  
+            
+        }
     }
 }
